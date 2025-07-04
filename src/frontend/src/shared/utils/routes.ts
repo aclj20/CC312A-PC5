@@ -1,4 +1,4 @@
-export const publicRoutes = {
+const publicRoutes = {
     LANDING: {
         ROOT: "/"
     },
@@ -10,6 +10,8 @@ export const publicRoutes = {
     }
 } as const;
 
-export const ROUTES = {
+const ROUTES = {
     ...publicRoutes
 }
+
+export default ROUTES;
