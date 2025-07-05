@@ -32,29 +32,29 @@ const LoginPage: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className="items-center justify-center flex flex-col">
             <NavigationBar />
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
+            <h2 className="text-2xl">Login</h2>
+            <form onSubmit={handleSubmit} className="border-2 border-gray-300 p-4 rounded-md shadow-md w-fit space-y-2">
+                <div className="space-x-2">
                     <label>Username:</label>
                     <input
                         value={username}
                         onChange={e => setUsername(e.target.value)}
-                        required
+                        required className="border-1 border-gray-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                 </div>
-                <div>
+                <div className="space-x-2">
                     <label>Password:</label>
                     <input
                         type="password"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
-                        required
+                        required className="border-1 border-gray-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                 </div>
                 {error && <div style={{ color: 'red' }}>{error}</div>}
-                <button type="submit">Sign In</button>
+                <button type="submit" className="mt-4 px-4 py-1 border-1 rounded-sm">Sign In</button>
             </form>
         </div>
     );
