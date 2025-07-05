@@ -1,8 +1,9 @@
 FROM node:18-alpine
 RUN corepack enable && corepack prepare pnpm@latest --activate
-WORKDIR /user/src/app
-COPY package.json ./
+WORKDIR /usr/src/app
+COPY package.json pnpm-lock.yaml ./
 RUN pnpm install
 COPY . .
-EXPOSE 3000
-CMD ["pnpm", "run", "preview", "--", "--host"]
+RUN pnpm run build
+EXPOSE 4173
+CMD ["pnpm", "run", "preview", "--", "--host", "0.0.0.0"]
