@@ -1,5 +1,5 @@
 import { createBrowserRouter, type RouteObject } from "react-router";
-import ROUTES from "../shared/utils/routes";
+import { ROUTES } from "../shared/utils/routes";
 import LandingPage from "../pages/LandingPage";
 import RegisterPage from "../pages/RegisterPage";
 import LoginPage from "../pages/LoginPage";

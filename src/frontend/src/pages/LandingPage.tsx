@@ -2,7 +2,7 @@ import React from "react";
 
 const LandingPage: React.FC = () => {
     return (
-        <div className="font-bold text-4xl">
+        <div>
             Landing Page
         </div>
     )
