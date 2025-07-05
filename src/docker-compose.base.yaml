@@ -1,0 +1,37 @@
+include:
+  - docker-compose.base.yaml
+services:
+  frontend_service:
+    build:
+      context: ./frontend_service
+    container_name: frontend-container
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: tododb
+      DB_USER: user
+      DB_PASSWORD: password
+    depends_on:
+      - db_service
+    ports:
+      - "8000:8000"
+
+  todo_service:
+    build:
+      context: ./auth-service
+    container_name: auth-container
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: tododb
+      DB_USER: user
+      DB_PASSWORD: password
+    depends_on:
+      - db_service
+    ports:
+      - "8002:8002"
+
+networks:
+  default:
+    name: shared_net
+    external: true
