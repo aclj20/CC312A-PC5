@@ -4,5 +4,5 @@ WORKDIR /user/src/app
 COPY package.json ./
 RUN pnpm install
 COPY . .
-EXPOSE 3000
-CMD ["pnpm", "run", "preview", "--", "--host"]
+EXPOSE 4000
+CMD ["node", "app.js"]
