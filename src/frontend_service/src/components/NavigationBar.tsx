@@ -5,7 +5,7 @@ const NavigationBar: React.FC = () => {
     return (
         <nav>
             <ul>
-                <li>
+                <li className="space-x-4">
                     <Link to="/">Inicio</Link>
                     <Link to="/login">Log In</Link>
                     <Link to="/register">Register</Link>
