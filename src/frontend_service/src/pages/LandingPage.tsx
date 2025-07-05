@@ -6,13 +6,15 @@ const LandingPage: React.FC = () => {
     const [username, setUsername] = useState<string | null>(null);
     const navigate = useNavigate();
 
+    const API = "http://localhost:8000";
+
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (!token) {
             navigate('/login');
             return;
         }
-        fetch('/api/auth/token', {
+        fetch(`${API}/api/auth/token`, {
             headers: { 'Authorization': `Bearer ${token}` },
         })
             .then(res => {

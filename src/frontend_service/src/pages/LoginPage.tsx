@@ -8,11 +8,13 @@ const LoginPage: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const navigate = useNavigate();
 
+    const API = "http://localhost:8000";
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setError(null);
         try {
-            const res = await fetch('/api/auth/login', {
+            const res = await fetch(`${API}/api/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
